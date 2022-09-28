@@ -13,28 +13,32 @@ function home(restaurantArr, error = {}, values = {}) {
       </html>
     `
 }
-
+        
+ 
 function form(error, values) {
   return /*html*/ `
     <form method='POST'>
+    ${validation(error.name)}
       <label for='name'>Name</label>
-      ${validation(error.name)}
-      <input type='text' id='name' name='address'
-      value="${values.name ? sanitize(values.name) : ''}"
-      />
+      <input type='text' id='name' name='name' value="${handleValue(values.name)}"/>
 
       <label for='description'>Description</label>
-      <input type='text' id='description' name='description'/>
+      <input type='text' id='description' name='description' value="${handleValue(values.description)}"/>
 
       <label for='address'>Address</label>
-      <input type='text' id='address' name='address'/>
+      <input type='text' id='address' name='address' value="${handleValue(values.address)}"/>
      
       <label for='price_range'>Price Range</label>
-      <input type='text' id='price_range' name='price_range'/>
+      <input type='text' id='price_range' name='price_range' value="${handleValue(values.price_range)}"/>
+
 
       <button type='submit'>Submit</button>
     </form>
   `
+}
+
+function handleValue(value) {
+  return value ? sanitize(value) : ''
 }
 
 function sanitize(str) {

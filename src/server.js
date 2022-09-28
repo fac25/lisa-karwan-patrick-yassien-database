@@ -28,12 +28,12 @@ server.post("/", bodyParser, (request, response) => {
   let formValues = { name, description, address, price_range };
 
   let errors = {};
-  console.log(request.body)
   if (!name) errors.name = "Please enter your name.";
   
 
   if (Object.keys(errors).length) {
-    response.status(400).send(home(restaurantQueries, errors, request.body)); //html to be filled in
+    const body = home(restaurantQueries, errors, request.body)
+    response.status(400).send(body); //html to be filled in
   } else {
     response.redirect("/");
     insertRestaurant(formValues);
