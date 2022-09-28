@@ -1,3 +1,5 @@
+const { getAllRestaurants } = require("../model/restaurants");
+
 function home(restaurantArr, error = {}, values = {}) {
     return /*html*/ `
       <!doctype html>
@@ -9,9 +11,10 @@ function home(restaurantArr, error = {}, values = {}) {
         <body>
           <h1>Restaurants</h1>
           ${form(error, values)}
+          ${displayRestaurants()}
           </body>
       </html>
-    `
+    `;
 }
         
  
@@ -34,8 +37,28 @@ function form(error, values) {
 
       <button type='submit'>Submit</button>
     </form>
-  `
+  `;
 }
+
+
+const displayRestaurants = () => {
+  return /*html */ `<ul>
+    ${getAllRestaurants()
+      .map((res) => {
+        return /*html */ ` 
+            <li>
+            <div>
+                <h3>${res.name}</h3>
+                <p>Price range${res.price_range}</p>
+                </div>
+                <p>${res.address}</p>
+                <p>${res.description}</p>
+            </li>
+        `;
+      })
+      .join("")}
+    </ul>`;
+};
 
 function handleValue(value) {
   return value ? sanitize(value) : ''
@@ -49,4 +72,4 @@ function validation(message) {
   return message ? `<span style="color: red">${message}</span>` : ''
 }
 
-module.exports = { home }
+module.exports = { home };
