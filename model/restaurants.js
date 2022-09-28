@@ -8,7 +8,6 @@ function getAllRestaurants(){
   return get_all_restaurants.all()
 }
 
-// console.log(getAllRestaurants())
 
 const insert_restaurant = db.prepare(/*sql*/ `
   INSERT INTO restaurants (name, description, address, price_range)
@@ -18,7 +17,7 @@ const insert_restaurant = db.prepare(/*sql*/ `
     $address,
     $price_range
   )
-  RETURNING id
+  RETURNING name, description, address, price_range
 `);
 
 function insertRestaurant(restaurant) {
