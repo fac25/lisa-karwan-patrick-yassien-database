@@ -1,6 +1,6 @@
 // Imports
 const express = require("express");
-const { insertRestaurant } = require("../model/restaurants.js");
+const { insertRestaurant, getAllRestaurants } = require("../model/restaurants.js");
 const { home } = require("./templates.js");
 const server = express();
 
@@ -15,7 +15,6 @@ server.get("/", (req, res) => {
 
 const bodyParser = express.urlencoded();
 
-const restaurantQueries = [{id: 1, name:'E-Mono Kebabs', description:'Legendary kebabs and wraps. Nice lunch deal: £5 for any wrap and a drink', address:'13 Stroud Green Rd', price_range: 5}];
 
 // Handles form submission
 //pending, will come back to edit commented out bit
@@ -32,7 +31,7 @@ server.post("/", bodyParser, (request, response) => {
   
 
   if (Object.keys(errors).length) {
-    const body = home(restaurantQueries, errors, request.body)
+    const body = home(getAllRestaurants(), errors, request.body)
     response.status(400).send(body); //html to be filled in
   } else {
     response.redirect("/");
