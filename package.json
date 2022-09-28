@@ -23,8 +23,8 @@
     "prettier": "^2.7.1"
   },
   "scripts": {
-    "start": "node challenge/index.js",
-    "dev": "nodemon challenge/index.js",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "test": "node --no-warnings --test",
     "test:1": "node --no-warnings tests/1.test.js",
     "test:2": "node --no-warnings tests/2.test.js",
