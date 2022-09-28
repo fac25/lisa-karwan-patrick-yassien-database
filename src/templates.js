@@ -1,5 +1,7 @@
+const { getAllRestaurants } = require("../model/restaurants");
+
 function home() {
-    return /*html*/ `
+  return /*html*/ `
       <!doctype html>
       <html>
         <head>
@@ -9,9 +11,10 @@ function home() {
         <body>
           <h1>Restaurants</h1>
           ${form()}
+          ${displayRestaurants()}
           </body>
       </html>
-    `
+    `;
 }
 
 function form() {
@@ -31,8 +34,26 @@ function form() {
 
       <button type='submit'>Submit</button>
     </form>
-  `
+  `;
 }
 
+const displayRestaurants = () => {
+  return /*html */ `<ul>
+    ${getAllRestaurants()
+      .map((res) => {
+        return /*html */ ` 
+            <li>
+            <div>
+                <h3>${res.name}</h3>
+                <p>Price range${res.price_range}</p>
+                </div>
+                <p>${res.address}</p>
+                <p>${res.description}</p>
+            </li>
+        `;
+      })
+      .join("")}
+    </ul>`;
+};
 
-module.exports = { home }
+module.exports = { home };
