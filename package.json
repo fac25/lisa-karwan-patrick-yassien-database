@@ -1,0 +1,23 @@
+{
+  "name": "lisa-karwan-patrick-yassien-database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "db.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac25/lisa-karwan-patrick-yassien-database.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues"
+  },
+  "homepage": "https://github.com/fac25/lisa-karwan-patrick-yassien-database#readme",
+  "dependencies": {
+    "better-sqlite3": "^7.6.2",
+    "nodemon": "^2.0.20"
+  }
+}
