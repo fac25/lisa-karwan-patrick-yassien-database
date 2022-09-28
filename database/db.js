@@ -8,15 +8,15 @@ const schemaPath = join('database', 'schema.sql')
 const schema = readFileSync(schemaPath, 'utf-8')
 db.exec(schema)
 
-const createQuery = db.prepare(
-  /*sql*/
-  `INSERT name INTO restaurants VALUES (
-    1, 'alksjdf', 'kjlakjdlkfja', 'laksdjflkajsdflkaj1', '123') ON CONFLICT DO NOTHING`
-)
+// const createQuery = db.prepare(
+//   /*sql*/
+//   `INSERT name INTO restaurants VALUES (
+//     1, 'alksjdf', 'kjlakjdlkfja', 'laksdjflkajsdflkaj1', '123') ON CONFLICT DO NOTHING`
+// )
 
-createQuery.run()
+// createQuery.run()
 
-const listQuery = db.prepare(`SELECT * from restaurants`)
-console.log(listQuery.all())
+// const listQuery = db.prepare(`SELECT * from restaurants`)
+// console.log(listQuery.all())
 
 module.exports = db
