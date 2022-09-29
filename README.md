@@ -12,6 +12,7 @@ You can find our site hosted on [Heroku](https://fac25-restaurants.herokuapp.com
 
 - [ ]  Make the website accessible [#12](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/12)
 - [ ]  Ensure responsiveness on the website [#10](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/10)
+- [ ] WRITE STYLING! Improve the website design [#11](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/11) 
 
 ## Our Database
 
