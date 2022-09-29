@@ -8,7 +8,6 @@ function getAllRestaurants(){
   return get_all_restaurants.all()
 }
 
-
 const insert_restaurant = db.prepare(/*sql*/ `
   INSERT INTO restaurants (name, description, address, price_range)
   VALUES(
