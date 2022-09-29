@@ -1,6 +1,6 @@
 const { getAllRestaurants } = require("../model/restaurants");
 
-function home(restaurantArr, error = {}, values = {}) {
+function displayHome(error = {}, values = {}) {
   return /*html*/ `
       <!doctype html>
       <html lang="en">
@@ -11,17 +11,17 @@ function home(restaurantArr, error = {}, values = {}) {
         </head>
         <body>
           <h1>Restaurants</h1>
-          ${form(error, values)}
+          ${displayForm(error, values)}
           ${displayRestaurants()}
-          </body>
+        </body>
       </html>
     `;
 }
 
-function form(error, values) {
+function displayForm(error, values) {
   return /*html*/ `
     <form method='POST'>
-    ${validation(error.name)}
+    ${displayError(error.name)}
       <label for='name'>Name</label>
       <input type='text' id='name' name='name' value="${handleValue(
         values.name
@@ -48,15 +48,15 @@ function form(error, values) {
   `;
 }
 
-const displayRestaurants = () => {
+function displayRestaurants() {
   return /*html */ `<ul>
     ${getAllRestaurants()
       .map((res) => {
-        return /*html */ ` 
+        return /*html */` 
             <li>
             <div>
                 <h2>${res.name}</h2>
-                <p>Price range${res.price_range}</p>
+                <p>${res.price_range ? 'Price Range: ' + res.price_range: ''}</p>
                 </div>
                 <p>${res.address}</p>
                 <p>${res.description}</p>
@@ -65,7 +65,7 @@ const displayRestaurants = () => {
       })
       .join("")}
     </ul>`;
-};
+}
 
 function handleValue(value) {
   return value ? sanitize(value) : "";
@@ -75,8 +75,8 @@ function sanitize(str) {
   return str.replaceAll("<", "&lt");
 }
 
-function validation(message) {
-  return message ? `<span style="color: red">${message}</span>` : "";
+function displayError(error) {
+  return error ? `<span style="color: red">${error}</span>` : "";
 }
 
-module.exports = { home };
+module.exports = { home: displayHome };
