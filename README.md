@@ -2,7 +2,7 @@
 
 ## By: Karwan, Lisa, Patrick and Yassien
 
-Our microblogging website allows the user to read the recommended restaurants of others and submit their own restaurant recommendation.
+Our website allows the user to read the recommended restaurants of others and submit their own restaurant recommendation.
 
 You can find our site hosted on [Heroku](https://fac25-restaurants.herokuapp.com/)
 
