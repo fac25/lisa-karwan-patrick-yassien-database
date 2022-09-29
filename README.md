@@ -9,6 +9,33 @@ You can find our site hosted on [Heroku](https://fac25-restaurants.herokuapp.com
 ## Our Database
 
 Our site uses a database with the following schema:
+<details>
+<summary><code>restaurants</code></summary>
+
+
+| column            | type    | constraints                        |
+| ----------------- | ------- | ---------------------------------- |
+| id                | integer | primary key autoincrement          |
+| name              | text    | not null                           |
+| description       | integer |  |
+| address           | text    |                                    |
+| price_range       | integer |                                    |
+
+
+</details>
+
+<details>
+<summary><code>reviews</code></summary>
+
+| column      | type    | constraints               |
+| ----------- | ------- | ------------------------- |
+| id          | integer | primary key autoincrement |
+| name        | text    |   not null                       |
+| review | text    |                           |
+  | rating | integer    |                           |
+  | restaurants_id |     |   references restaurants(id)                         |
+
+  </details>
 
 ```sql
 CREATE TABLE IF NOT EXISTS restaurants (
