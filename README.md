@@ -1,6 +1,8 @@
 # Week 2: Database Project 
 
-## By: Karwan, Lisa, Patrick and Yassien
+### 🍕 Finsbo! 😋
+
+### By: Karwan, Lisa, Patrick and Yassien
 
 Our website allows the user to read the recommended restaurants of others and submit their own restaurant recommendation.
 
