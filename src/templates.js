@@ -15,11 +15,11 @@ function displayHome(error = {}, values = {}) {
             <h1>Finsbo!</h1>
           </header>
           <main>
-            <div class="center width-sm">
+            <div id="formContainer" class="center">
             ${displayError(error.name)}
             ${displayForm(values)}
             </div>
-            <h2>Finsbury Park Restaurants</h2>
+            <h2 class="center width-sm">Finsbury Park Restaurants</h2>
             ${displayRestaurants()}
           </main>
         </body>
@@ -29,30 +29,38 @@ function displayHome(error = {}, values = {}) {
 
 function displayForm(values) {
   return /*html*/ `
-    <form method='POST'>
-      <label for='name'>Name</label>
-      <input type='text' id='name' name='name' aria-describedBy='name-error' value="${handleValue(
+    <form method='POST' class="form-style row">
+    <div>
+      <label for='name' class="one-third">Name</label>
+      <input class="two-thirds" type='text' id='name' name='name' aria-describedBy='name-error' value="${handleValue(
         values.name
-      )}"><br><br>
-      <label for='description'>Description:</label>
-      <input type='text' id='description' name='description' value="${handleValue(
+      )}">
+    </div>  
+    <div>
+      <label for='description' class="one-third">Description:</label>
+      <textarea class="two-thirds" type='text' id='description' name='description' value="${handleValue(
         values.description
-      )}"/><br><br>
-      <label for='address'>Address:</label>
-      <input type='text' id='address' name='address' value="${handleValue(
+      )}"></textarea>
+    </div>
+    <div>   
+      <label for='address' class="one-third">Address:</label>
+      <input class="two-thirds" type='text' id='address' name='address' value="${handleValue(
         values.address
-      )}"/><br><br>  
-      <label for='price_range'>Price Range:</label>
-      <input type='text' id='price_range' name='price_range' value="${handleValue(
+      )}"/>
+    </div> 
+    <div>    
+      <label for='price_range' class="one-third">Price Range:</label>
+      <input class="two-thirds" type='text' id='price_range' name='price_range' value="${handleValue(
         values.price_range
-      )}"/><br><br>
+      )}"/>
+    </div>   
       <button type='submit'>Add Restaurant</button>
     </form>
   `
 }
 
 function displayRestaurants() {
-  return /*html */ `<ul class="center">
+  return /*html */ `<ul class="center width-xl">
     <div class="grid">
     ${getAllRestaurants()
       .map((res) => {
@@ -61,7 +69,7 @@ function displayRestaurants() {
             <div>
                 <h3>${res.name}</h2>
                 <p>${
-                  res.price_range ? 'Price Range: ' + res.price_range : ''
+                  res.price_range ? '£' + res.price_range : ''
                 }</p>
                 </div>
                 <p>${res.address}</p>
@@ -73,7 +81,7 @@ function displayRestaurants() {
       </div>
     </ul>
   `;
-};
+}
 
 function handleValue(value) {
   return value ? sanitize(value) : ''

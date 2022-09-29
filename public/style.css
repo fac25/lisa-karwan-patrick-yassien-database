@@ -16,7 +16,7 @@ label {
 }
 
 .width-sm {
-    max-width: 18rem;
+    max-width: 22rem;
 }
 
 .width-lg {
@@ -50,6 +50,25 @@ label {
     align-items: center;
 }
 
+.row div{
+    width: 100%;
+}
+
+.row div > label {
+    width: 30%
+}
+
+.row div> input {
+    width: 60%
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: center;
+}
+
 .align-start {
     align-items: start;
 }
@@ -60,7 +79,7 @@ label {
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: 1rem;
 }
   
@@ -71,4 +90,23 @@ label {
     height: 1px;
     top: auto;
     overflow: hidden;
+}
+
+.form-style {
+    border: 1px solid tomato;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.5);
+    padding: 1rem;
+}
+
+.two-thirds {
+    width: 67%
+}
+
+.one-third {
+    width: 33%
+}
+
+.border {
+   
 }

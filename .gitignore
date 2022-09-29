@@ -1,3 +1,6 @@
 node_modules/
 test.sqlite
+test1.sqlite
+test2.sqlite
+test3.sqlite
 .DS_Store
