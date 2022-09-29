@@ -6,6 +6,11 @@ Our website allows the user to read the recommended restaurants of others and su
 
 You can find our site hosted on [Heroku](https://fac25-restaurants.herokuapp.com/)
 
+## ⚠️ Known Issues ⚠️
+
+- [ ]  Make the website accessible [#12](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/12)
+- [ ]  Ensure responsiveness on the website [#10](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/10)
+
 ## Our Database
 
 Our site uses a database with the following schema:
