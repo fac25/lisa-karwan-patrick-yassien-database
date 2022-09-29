@@ -1,0 +1,74 @@
+/* General CSS */
+ul {
+  list-style: none;
+}
+
+label {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.center {
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.width-sm {
+    max-width: 18rem;
+}
+
+.width-lg {
+    max-width: 40rem;
+}
+    
+.width-xl {
+    max-width: 60rem;
+}
+  
+.stack-sm > * + * {
+    margin-top: 0.5rem;
+}
+
+.stack-md > * + * {
+    margin-top: 1rem;
+}
+
+.stack-lg > * + * {
+    margin-top: 2rem;
+}
+
+.stack-xl > * + * {
+    margin-top: 4rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.align-start {
+    align-items: start;
+}
+
+.align-end {
+    align-items: end;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+  
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    top: auto;
+    overflow: hidden;
+}
