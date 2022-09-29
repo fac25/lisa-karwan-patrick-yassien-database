@@ -104,12 +104,8 @@ To run:
 - [x] Not process user input as SQL commands
 - [x] Hidden environment variables (i.e. not on GitHub)
 
-## Snapshot
-
-
 ## Known Issues
 
-- [ ]  Stretch goal: filtering by price range [#31](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/31)
 - [ ]  Make the website accessible [#12](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/12)
 - [ ]  Ensure responsiveness on the website [#10](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/10)
 
