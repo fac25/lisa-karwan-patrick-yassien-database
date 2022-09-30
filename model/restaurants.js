@@ -1,7 +1,7 @@
 const db = require("../database/db");
 
 const get_all_restaurants = db.prepare(/*sql*/`
-  SELECT * FROM restaurants
+  SELECT name, description, address, price_range FROM restaurants
 `)
 
 function getAllRestaurants(){
