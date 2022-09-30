@@ -1,6 +1,9 @@
 // Imports
 const express = require('express')
-const { insertRestaurant } = require('../model/restaurants.js')
+const {
+  insertRestaurant,
+  getAllRestaurants,
+} = require('../model/restaurants.js')
 const { home } = require('./templates.js')
 const server = express()
 
@@ -9,7 +12,8 @@ const staticHandler = express.static('public')
 server.use(staticHandler)
 
 server.get('/', (req, res) => {
-  res.send(home(req.body))
+  const restaurantsArr = getAllRestaurants()
+  res.send(home(restaurantsArr, req.body))
 })
 
 const bodyParser = express.urlencoded()
@@ -27,7 +31,7 @@ server.post('/', bodyParser, (request, response) => {
   if (!name) errors.name = 'Please enter the restaurant name.'
 
   if (Object.keys(errors).length) {
-    const body = home(errors, request.body)
+    const body = home(getAllRestaurants, errors, request.body)
     response.status(400).send(body) //html to be filled in
   } else {
     response.redirect('/')

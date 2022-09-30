@@ -1,6 +1,4 @@
-const { getAllRestaurants } = require('../model/restaurants')
-
-function displayHome(error = {}, values = {}) {
+function displayHome(restaurantsArr, error = {}, values = {}) {
   return /*html*/ `
       <!doctype html>
       <html lang="en">
@@ -20,7 +18,7 @@ function displayHome(error = {}, values = {}) {
             ${displayForm(values)}
             </div>
             <h2 class="width-xl center">Finsbury Park Restaurants</h2>
-            ${displayRestaurants()}
+            ${displayRestaurants(restaurantsArr)}
           </main>
         </body>
       </html>
@@ -59,10 +57,10 @@ function displayForm(values) {
   `
 }
 
-function displayRestaurants() {
+function displayRestaurants(restaurantsArr) {
   return /*html */ `<div class="center width-xl">
     <ul class="grid">
-    ${getAllRestaurants()
+    ${restaurantsArr
       .map((res) => {
         return /*html */ ` 
             <li>
