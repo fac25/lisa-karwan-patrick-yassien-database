@@ -67,11 +67,11 @@ function displayRestaurants() {
         return /*html */ ` 
             <li>
             <div>
-                <h3>${res.name}</h2>
+                <h3>${sanitize(res.name)}</h2>
                 </div>
-                <p>${res.address}</p>
-                <p>${res.description}</p>
-                <p>${res.price_range ? '£' + res.price_range : ''}</p>
+                <p>${sanitize(res.address)}</p>
+                <p>${sanitize(res.description)}</p>
+                <p>${sanitize(res.price_range ? '£' + res.price_range : '')}</p>
             </li>
         `
       })
