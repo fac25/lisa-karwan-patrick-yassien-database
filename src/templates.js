@@ -72,7 +72,7 @@ function displayRestaurants(restaurantsArr) {
                 <p>${sanitize(res.price_range ? '£' + res.price_range : '')}</p>
             </li>
         `
-      })
+      }).reverse()
       .join('')}
       </ul>
   `
