@@ -31,7 +31,7 @@ server.post('/', bodyParser, (request, response) => {
   if (!name) errors.name = 'Please enter the restaurant name.'
 
   if (Object.keys(errors).length) {
-    const body = home(getAllRestaurants, errors, request.body)
+    const body = home(getAllRestaurants(), errors, request.body)
     response.status(400).send(body) //html to be filled in
   } else {
     response.redirect('/')
