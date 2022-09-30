@@ -31,7 +31,7 @@ function displayForm(values) {
   return /*html*/ `
     <form method='POST' class="form-style">
     <div class='form-item'>
-      <label for='name'>Name</label>
+      <label for='name'>Restaurant Name</label>
       <input type='text' id='name' name='name' aria-describedBy='name-error' value="${handleValue(
         values.name
       )}">
@@ -43,7 +43,7 @@ function displayForm(values) {
       )}"></textarea>
     </div>
     <div class='form-item'>   
-      <label for='address'>Address:</label>
+      <label for='address'>Restaurant Address:</label>
       <input type='text' id='address' name='address' value="${handleValue(
         values.address
       )}"/>

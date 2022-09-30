@@ -24,7 +24,7 @@ server.post('/', bodyParser, (request, response) => {
   let formValues = { name, description, address, price_range }
 
   let errors = {}
-  if (!name) errors.name = 'Please enter your name.'
+  if (!name) errors.name = 'Please enter the restaurant name.'
 
   if (Object.keys(errors).length) {
     const body = home(errors, request.body)
