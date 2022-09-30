@@ -1,6 +1,4 @@
-const { getAllRestaurants } = require('../model/restaurants')
-
-function displayHome(error = {}, values = {}) {
+function displayHome(restaurantsArr, error = {}, values = {}) {
   return /*html*/ `
       <!doctype html>
       <html lang="en">
@@ -20,7 +18,7 @@ function displayHome(error = {}, values = {}) {
             ${displayForm(values)}
             </div>
             <h2 class="width-xl center">Finsbury Park Restaurants</h2>
-            ${displayRestaurants()}
+            ${displayRestaurants(restaurantsArr)}
           </main>
         </body>
       </html>
@@ -31,7 +29,7 @@ function displayForm(values) {
   return /*html*/ `
     <form method='POST' class="form-style">
     <div class='form-item'>
-      <label for='name'>Name</label>
+      <label for='name'>Restaurant Name</label>
       <input type='text' id='name' name='name' aria-describedBy='name-error' value="${handleValue(
         values.name
       )}">
@@ -43,14 +41,14 @@ function displayForm(values) {
       )}"></textarea>
     </div>
     <div class='form-item'>   
-      <label for='address'>Address:</label>
+      <label for='address'>Restaurant Address:</label>
       <input type='text' id='address' name='address' value="${handleValue(
         values.address
       )}"/>
     </div> 
     <div class='form-item'>    
       <label for='price_range'>Price Range:</label>
-      <input type='text' id='price_range' name='price_range' value="${handleValue(
+      <input type='number' id='price_range' name='price_range' value="${handleValue(
         values.price_range
       )}"/>
     </div>   
@@ -59,25 +57,24 @@ function displayForm(values) {
   `
 }
 
-function displayRestaurants() {
-  return /*html */ `<ul class="center width-xl">
-    <div class="grid">
-    ${getAllRestaurants()
+function displayRestaurants(restaurantsArr) {
+  return /*html */ `
+    <ul class="grid center width-xl">
+    ${restaurantsArr
       .map((res) => {
         return /*html */ ` 
             <li>
-            <div>
-                <h3>${res.name}</h2>
+                <div>
+                <h3>${sanitize(res.name)}</h2>
                 </div>
-                <p>${res.address}</p>
-                <p>${res.description}</p>
-                <p>${res.price_range ? '£' + res.price_range : ''}</p>
+                <p>${sanitize(res.address)}</p>
+                <p>${sanitize(res.description)}</p>
+                <p>${sanitize(res.price_range ? '£' + res.price_range : '')}</p>
             </li>
         `
       })
       .join('')}
-      </div>
-    </ul>
+      </ul>
   `
 }
 

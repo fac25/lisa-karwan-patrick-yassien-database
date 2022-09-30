@@ -1,4 +1,4 @@
-# Week 2: Database Project 
+# Week 2: Database Project
 
 ### 🍕 Finsbo! 😋
 
@@ -10,38 +10,37 @@ You can find our site hosted on [Heroku](https://fac25-restaurants.herokuapp.com
 
 ## ⚠️ Known Issues ⚠️
 
-- [ ]  Make the website accessible [#12](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/12)
-- [ ]  Ensure responsiveness on the website [#10](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/10)
-- [ ] WRITE STYLING! Improve the website design [#11](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/11) 
+- [ ] Make the website accessible [#12](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/12)
+- [ ] Ensure responsiveness on the website [#10](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/10)
+- [ ] WRITE STYLING! Improve the website design [#11](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/11)
 
 ## Our Database
 
 Our site uses a database with the following schema:
+
 <details>
 <summary><code>restaurants</code></summary>
 
-
-| column            | type    | constraints                        |
-| ----------------- | ------- | ---------------------------------- |
-| id                | integer | primary key autoincrement          |
-| name              | text    | not null                           |
-| description       | integer |  |
-| address           | text    |                                    |
-| price_range       | integer |                                    |
-
+| column      | type    | constraints               |
+| ----------- | ------- | ------------------------- |
+| id          | integer | primary key autoincrement |
+| name        | text    | not null                  |
+| description | integer |                           |
+| address     | text    |                           |
+| price_range | integer |                           |
 
 </details>
 
 <details>
 <summary><code>reviews</code></summary>
 
-| column      | type    | constraints               |
-| ----------- | ------- | ------------------------- |
-| id          | integer | primary key autoincrement |
-| name        | text    |   not null                       |
-| review | text    |                           |
-  | rating | integer    |                           |
-  | restaurants_id |     |   references restaurants(id)                         |
+| column         | type    | constraints                |
+| -------------- | ------- | -------------------------- |
+| id             | integer | primary key autoincrement  |
+| name           | text    | not null                   |
+| review         | text    |                            |
+| rating         | integer |                            |
+| restaurants_id |         | references restaurants(id) |
 
   </details>
 
@@ -69,8 +68,8 @@ Make sure you have Git and Node (v18) installed.
 
 1. Clone this repo and `cd` into the directory
 2. Run `npm install` to install all the dependencies
-3. Run `npm run dev` to start the server.  
-
+3. Run `npm run seed` to seed the local database
+4. Run `npm run dev` to start the server
 
 This uses the `nodemon` library to auto-restart the server when you save changes.
 
@@ -98,7 +97,7 @@ To run:
 
 ## Stretch
 
-- [ ] As a picky user, I want to:  view filtered/sorted data (eg only restaurants within a particular price range), instead of just all of it
+- [ ] As a picky user, I want to: view filtered/sorted data (eg only restaurants within a particular price range), instead of just all of it
 - [ ] GitHub Actions CI setup to run your tests when you push
 
 ## Acceptance Criteria
@@ -114,6 +113,5 @@ To run:
 
 ## Known Issues
 
-- [ ]  Make the website accessible [#12](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/12)
-- [ ]  Ensure responsiveness on the website [#10](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/10)
-
+- [ ] Make the website accessible [#12](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/12)
+- [ ] Ensure responsiveness on the website [#10](https://github.com/fac25/lisa-karwan-patrick-yassien-database/issues/10)
