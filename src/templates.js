@@ -36,7 +36,7 @@ function displayForm(values) {
         values.name
       )}">
     </div>  
-    <div class='form-item'>
+    <div celass='form-item'>
       <label for='description'>Description:</label>
       <textarea type='text' id='description' name='description' value="${handleValue(
         values.description
