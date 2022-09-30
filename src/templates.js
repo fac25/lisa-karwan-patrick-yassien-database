@@ -50,7 +50,7 @@ function displayForm(values) {
     </div> 
     <div class='form-item'>    
       <label for='price_range'>Price Range:</label>
-      <input type='text' id='price_range' name='price_range' value="${handleValue(
+      <input type='number' id='price_range' name='price_range' value="${handleValue(
         values.price_range
       )}"/>
     </div>   
