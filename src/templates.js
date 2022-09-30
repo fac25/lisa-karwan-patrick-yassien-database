@@ -60,13 +60,13 @@ function displayForm(values) {
 }
 
 function displayRestaurants() {
-  return /*html */ `<ul class="center width-xl">
-    <div class="grid">
+  return /*html */ `<div class="center width-xl">
+    <ul class="grid">
     ${getAllRestaurants()
       .map((res) => {
         return /*html */ ` 
             <li>
-            <div>
+                <div>
                 <h3>${sanitize(res.name)}</h2>
                 </div>
                 <p>${sanitize(res.address)}</p>
@@ -76,8 +76,8 @@ function displayRestaurants() {
         `
       })
       .join('')}
-      </div>
-    </ul>
+      </ul>
+    </div>
   `
 }
 
