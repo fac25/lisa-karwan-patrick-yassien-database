@@ -34,7 +34,7 @@ function displayForm(values) {
         values.name
       )}">
     </div>  
-    <div celass='form-item'>
+    <div class='form-item'>
       <label for='description'>Description:</label>
       <textarea type='text' id='description' name='description' value="${handleValue(
         values.description
@@ -58,8 +58,8 @@ function displayForm(values) {
 }
 
 function displayRestaurants(restaurantsArr) {
-  return /*html */ `<div class="center width-xl">
-    <ul class="grid">
+  return /*html */ `
+    <ul class="grid center width-xl">
     ${restaurantsArr
       .map((res) => {
         return /*html */ ` 
@@ -75,7 +75,6 @@ function displayRestaurants(restaurantsArr) {
       })
       .join('')}
       </ul>
-    </div>
   `
 }
 
